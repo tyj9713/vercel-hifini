@@ -5,7 +5,7 @@ require_once 'config.php';
 $tid = isset($_GET['tid']) ? trim($_GET['tid']) : '';
 
 if (empty($tid)) {
-    header('Location: index.php');
+    header('Location: /');
     exit;
 }
 
@@ -215,7 +215,7 @@ function formatContent($content, $tid) {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="index.php" class="flex-shrink-0 flex items-center">
+                    <a href="/" class="flex-shrink-0 flex items-center">
                         <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-3">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
@@ -226,7 +226,7 @@ function formatContent($content, $tid) {
                 </div>
                 <!-- 搜索框 -->
                 <div class="flex-1 max-w-lg mx-8">
-                    <form action="search.php" method="GET" class="relative">
+                    <form action="/search" method="GET" class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -246,7 +246,7 @@ function formatContent($content, $tid) {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                     </button>
-                    <a href="index.php" class="text-gray-600 hover:text-primary transition-colors">
+                    <a href="/" class="text-gray-600 hover:text-primary transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
@@ -269,7 +269,7 @@ function formatContent($content, $tid) {
                 <div>
                     <h3 class="text-lg font-semibold text-red-800"><?php echo htmlspecialchars($error); ?></h3>
                     <div class="mt-2">
-                        <a href="index.php" class="text-red-700 hover:text-red-900 font-medium">返回首页</a>
+                        <a href="/" class="text-red-700 hover:text-red-900 font-medium">返回首页</a>
                     </div>
                 </div>
             </div>
@@ -497,7 +497,7 @@ function formatContent($content, $tid) {
             button.classList.add('loading');
             
             try {
-                const response = await fetch('get_extract_code.php', {
+                const response = await fetch('/api/extract-code', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
