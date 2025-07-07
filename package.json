@@ -1,0 +1,22 @@
+{
+  "name": "hifiniphp",
+  "version": "1.0.0",
+  "description": "HiFiNi 音乐资源论坛快照搜索网站",
+  "main": "index.php",
+  "scripts": {
+    "build": "echo 'No build step required for PHP'",
+    "start": "php -S localhost:8000"
+  },
+  "keywords": [
+    "php",
+    "hifini",
+    "music",
+    "forum",
+    "search"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
